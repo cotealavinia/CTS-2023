@@ -9,10 +9,15 @@ import java.util.Scanner;
 import cts.s02.principii_clean_code.clase.Aplicant;
 import cts.s02.principii_clean_code.clase.Student;
 
-public class StudentReader {
+public class StudentReader extends AplicantReader{
+		public StudentReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
 
-	public static List<Aplicant> readStudents(String file) throws FileNotFoundException, NumberFormatException {
-		Scanner input = new Scanner(new File(file));
+		@Override
+		public  List<Aplicant> readAplicanti() throws FileNotFoundException{
+		Scanner input = new Scanner(new File(super.fileName));
 		input.useDelimiter(",|\n");
 		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
